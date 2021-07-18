@@ -13,10 +13,21 @@ package pongGame;
  *
  */
 public class PongGame {
+	//This is the instance to our FrameController. 
+	//So any reference to its methods needs to happen from this class.
+	static FrameController controller;
 
 	public static void main(String[] args) {
 		
-		GameFrame frame = new GameFrame();
-		
+//		GameFrame frame = new GameFrame();
+//		TitleFrame frame = new TitleFrame();
+		controller = new FrameController();
 	}
+	
+	//The method simply refers to the method in the controller to move to the start screen.
+	
+	public static void transitionFromTitleToStart() {
+		controller.TitleFrameToStartFrame();
+	}
+	
 }
