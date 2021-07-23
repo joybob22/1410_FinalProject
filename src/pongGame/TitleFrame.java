@@ -3,6 +3,12 @@ package pongGame;
 import java.awt.*;
 import javax.swing.*;
 
+/**
+ * 
+ * @author braydenlemke
+ *
+ */
+
 public class TitleFrame extends JFrame {
 	TitlePanel panel;
 	TitleFrame() {

@@ -18,10 +18,8 @@ public class PongGame {
 	static FrameController controller;
 
 	public static void main(String[] args) {
-		
-//		GameFrame frame = new GameFrame();
-//		TitleFrame frame = new TitleFrame();
 		controller = new FrameController();
+		controller.startTitleScreen();
 	}
 	
 	//The method simply refers to the method in the controller to move to the start screen.
