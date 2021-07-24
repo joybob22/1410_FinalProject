@@ -25,8 +25,12 @@ public class PongGame {
 		controller.TitleFrameToStartFrame();
 	}
 	
-	public static void endGame() {
-		
+	public static void transitionFromRestartToStart() {
+		controller.RestartFrameToStartFrame();
+	}
+	
+	public static void endGame(int score1, int score2) {
+		controller.endGame(score1, score2);
 	}
 	
 }
