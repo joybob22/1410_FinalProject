@@ -19,6 +19,7 @@ public class FrameController {
 	
 	public void startTitleScreen() {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					titleFrame = new TitleFrame1();
@@ -63,6 +64,7 @@ public class FrameController {
 	public void gameFrameToRestart() {
 		gameFrame.destroy();
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					restartFrame = new RestartFrame();

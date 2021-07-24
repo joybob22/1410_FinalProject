@@ -1,19 +1,15 @@
 package pongGame;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.WindowConstants;
+
 import java.awt.Font;
 import javax.swing.JButton;
-import java.awt.GridLayout;
-import java.awt.CardLayout;
-import net.miginfocom.swing.MigLayout;
-import java.awt.FlowLayout;
 import javax.swing.BoxLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -31,7 +27,7 @@ public class TitleFrame1 extends JFrame implements Runnable{
 		this.setVisible(true);
 		this.pack();
 		this.setLocationRelativeTo(null);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setVisible(true);
@@ -57,6 +53,7 @@ public class TitleFrame1 extends JFrame implements Runnable{
 		btnNewButton_1.setAlignmentX(Component.CENTER_ALIGNMENT);
 		btnNewButton_1.setBackground(Color.CYAN);
 		btnNewButton_1.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				PongGame.transitionFromTitleToStart();
 			}
@@ -67,6 +64,7 @@ public class TitleFrame1 extends JFrame implements Runnable{
 		btnNewButton.setForeground(Color.BLACK);
 		btnNewButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 		btnNewButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 			}
 		});

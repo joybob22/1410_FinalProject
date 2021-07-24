@@ -11,6 +11,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
+import pongGame.Paddle;
 
 public class GamePanel extends JPanel implements Runnable{
 
@@ -51,6 +52,7 @@ public class GamePanel extends JPanel implements Runnable{
 		paddle1 = new Paddle(0,(GAME_HEIGHT/2)-(PADDLE_HEIGHT/2),PADDLE_WIDTH,PADDLE_HEIGHT,1);
 		paddle2 = new Paddle(GAME_WIDTH-PADDLE_WIDTH,(GAME_HEIGHT/2)-(PADDLE_HEIGHT/2),PADDLE_WIDTH,PADDLE_HEIGHT,2);
 	}
+	@Override
 	public void paint(Graphics g) {
 		image = createImage(getWidth(),getHeight());
 		graphics = image.getGraphics();
@@ -127,6 +129,7 @@ Toolkit.getDefaultToolkit().sync(); // I forgot to add this line of code in the 
 			System.out.println("Player 1: "+score.player1);
 		}
 	}
+	@Override
 	public void run() {
 		//game loop
 		long lastTime = System.nanoTime();
@@ -146,10 +149,12 @@ Toolkit.getDefaultToolkit().sync(); // I forgot to add this line of code in the 
 		}
 	}
 	public class AL extends KeyAdapter{
+		@Override
 		public void keyPressed(KeyEvent e) {
 			paddle1.keyPressed(e);
 			paddle2.keyPressed(e);
 		}
+		@Override
 		public void keyReleased(KeyEvent e) {
 			paddle1.keyReleased(e);
 			paddle2.keyReleased(e);
