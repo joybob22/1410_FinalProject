@@ -1,3 +1,4 @@
+/*
 package pongGame;
 
 import java.awt.BorderLayout;
@@ -15,14 +16,17 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Component;
+//Currently unused replaced w/RestartFrameWinBuild
 
+ */
+
+/*
 public class RestartFrame extends JFrame implements Runnable{
 
 	private JPanel contentPane;
 
-	/**
-	 * Create the frame.
-	 */
+	//Create the frame.
+	 
 	public RestartFrame() {
 		this.setVisible(true);
 		this.pack();
@@ -92,3 +96,4 @@ public class RestartFrame extends JFrame implements Runnable{
 	}
 
 }
+*/

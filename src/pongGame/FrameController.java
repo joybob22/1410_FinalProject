@@ -10,8 +10,8 @@ import java.awt.EventQueue;
 
 public class FrameController {
 	//Immediately instantiate the title frame because that is our first frame
-	TitleFrame1 titleFrame;
-	RestartFrame restartFrame;
+	TitleFrame1WinBuild titleFrame;
+	RestartFrameWinBuild RestartFrameWinBuild;
 	
 	//All other frames would need to be declared here.
 	//That way there is one class that holds all the instances of our frames
@@ -22,7 +22,7 @@ public class FrameController {
 			@Override
 			public void run() {
 				try {
-					titleFrame = new TitleFrame1();
+					titleFrame = new TitleFrame1WinBuild();
 					titleFrame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,8 +40,8 @@ public class FrameController {
 		gameFrame = new GameFrame();
 	}
 	
-	public void RestartFrameToStartFrame() {
-		restartFrame.destroy();
+	public void RestartFrameWinBuildToStartFrame() {
+		RestartFrameWinBuild.destroy();
 		gameFrame = new GameFrame();
 	}
 	
@@ -53,22 +53,19 @@ public class FrameController {
 	 */
 	
 	public void endGame(int score1, int score2) {
-		
-		//Determine if either score is a high score.
-		
-		
-		//This code is to be run if there is no high score
-		gameFrameToRestart();
+		//Extra endGame function if needed.
+		//For now just passes info to restart
+		gameFrameToRestart(score1, score2);
 	}
 	
-	public void gameFrameToRestart() {
+	public void gameFrameToRestart(int p1Score, int p2Score) {
 		gameFrame.destroy();
 		EventQueue.invokeLater(new Runnable() {
 			@Override
 			public void run() {
 				try {
-					restartFrame = new RestartFrame();
-					restartFrame.setVisible(true);
+					RestartFrameWinBuild = new RestartFrameWinBuild(p1Score, p2Score);
+					RestartFrameWinBuild.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

@@ -1,4 +1,3 @@
-/**
 package pongGame;
 
 import java.awt.BorderLayout;
@@ -21,15 +20,20 @@ import java.util.Scanner;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
+import javax.swing.JTextArea;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
 
-public class TitleFrame1 extends JFrame implements Runnable{
+public class TitleFrame1WinBuild extends JFrame implements Runnable{
 
 	private JPanel contentPane;
 
-	
-	//Create the frame.
-	 
-	public TitleFrame1() {
+	/**
+	 * Create the frame.
+	 */
+	public TitleFrame1WinBuild() {
+		setMinimumSize(new Dimension(300, 300));
 		this.setVisible(true);
 		this.pack();
 		this.setLocationRelativeTo(null);
@@ -66,21 +70,46 @@ public class TitleFrame1 extends JFrame implements Runnable{
 		});
 		panel.add(btnNewButton_1);
 		
-		JButton btnNewButton = new JButton("High Scores");
-		btnNewButton.setForeground(Color.BLACK);
-		btnNewButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-		btnNewButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		panel.add(btnNewButton);
+		
 		
 		JLabel lblNewLabel_1 = new JLabel("                              ");
 		contentPane.add(lblNewLabel_1, BorderLayout.WEST);
 		
 		JLabel lblNewLabel_2 = new JLabel("                         ");
 		contentPane.add(lblNewLabel_2, BorderLayout.EAST);
+		
+		
+		
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setForeground(Color.WHITE);
+		panel_1.setBackground(Color.BLACK);
+		contentPane.add(panel_1, BorderLayout.SOUTH);
+		panel_1.setLayout(new BorderLayout(0, 0));
+		
+		JTextArea highScoreTxtArea = new JTextArea();
+		panel_1.add(highScoreTxtArea);
+		highScoreTxtArea.setEditable(false);
+		highScoreTxtArea.setLineWrap(true);
+		highScoreTxtArea.setForeground(Color.WHITE);
+		highScoreTxtArea.setBackground(Color.BLACK);
+		highScoreTxtArea.setWrapStyleWord(true);
+		
+		//Button to list Highscores. Needs Formatting Work in design tab.
+		JButton btnNewButton = new JButton("High Scores");
+		btnNewButton.setForeground(Color.BLACK);
+		btnNewButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+		btnNewButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String outPut = String.format("HighScores Expand the page to see them all: %n%n");
+				highScoreTxtArea.setText(outPut + listHighScores());
+			}
+		});
+		panel.add(btnNewButton);
+		
+		
+		
 	}
 	
 	//For some reason this method has to be called destroy.
@@ -123,4 +152,3 @@ public class TitleFrame1 extends JFrame implements Runnable{
 	}
 
 }
-**/
