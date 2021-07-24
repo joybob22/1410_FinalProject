@@ -64,7 +64,7 @@ public class GamePanel extends JPanel implements Runnable{
 		score.draw(g);
 		time.draw(g);
 		if(time.seconds < 1) {
-			//end game
+			PongGame.endGame(score.player1, score.player2);
 		}
 Toolkit.getDefaultToolkit().sync(); // I forgot to add this line of code in the video, it helps with the animation
 

@@ -20,14 +20,14 @@ import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Component;
 
-public class TitleFrame1 extends JFrame implements Runnable{
+public class RestartFrame extends JFrame implements Runnable{
 
 	private JPanel contentPane;
 
 	/**
 	 * Create the frame.
 	 */
-	public TitleFrame1() {
+	public RestartFrame() {
 		this.setVisible(true);
 		this.pack();
 		this.setLocationRelativeTo(null);
@@ -40,7 +40,7 @@ public class TitleFrame1 extends JFrame implements Runnable{
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
-		JLabel lblNewLabel = new JLabel("Pong");
+		JLabel lblNewLabel = new JLabel("Game Over");
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 62));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -52,13 +52,13 @@ public class TitleFrame1 extends JFrame implements Runnable{
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
 		
-		JButton btnNewButton_1 = new JButton("Start");
+		JButton btnNewButton_1 = new JButton("Restart");
 		btnNewButton_1.setForeground(Color.BLACK);
 		btnNewButton_1.setAlignmentX(Component.CENTER_ALIGNMENT);
 		btnNewButton_1.setBackground(Color.CYAN);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				PongGame.transitionFromTitleToStart();
+				PongGame.transitionFromRestartToStart();
 			}
 		});
 		panel.add(btnNewButton_1);

@@ -25,4 +25,9 @@ public class GameFrame extends JFrame{
 		this.setVisible(true);
 		this.setLocationRelativeTo(null);
 	}
+	
+	public void destroy() {
+		this.setVisible(false);
+		this.dispose();
+	}
 }
