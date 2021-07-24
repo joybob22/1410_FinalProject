@@ -28,4 +28,8 @@ public class PongGame {
 		controller.TitleFrameToStartFrame();
 	}
 	
+	public static void endGame() {
+		
+	}
+	
 }

@@ -29,6 +29,8 @@ public class TitleFrame1 extends JFrame implements Runnable{
 	 */
 	public TitleFrame1() {
 		this.setVisible(true);
+		this.pack();
+		this.setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();

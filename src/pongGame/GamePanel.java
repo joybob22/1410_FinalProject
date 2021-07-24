@@ -28,11 +28,13 @@ public class GamePanel extends JPanel implements Runnable{
 	Paddle paddle2;
 	Ball ball;
 	Score score;
+	Time time;
 	
 	GamePanel(){
 		newPaddles();
 		newBall();
 		score = new Score(GAME_WIDTH,GAME_HEIGHT);
+		time = new Time(GAME_WIDTH,GAME_HEIGHT);
 		this.setFocusable(true);
 		this.addKeyListener(new AL());
 		this.setPreferredSize(SCREEN_SIZE);
@@ -60,6 +62,10 @@ public class GamePanel extends JPanel implements Runnable{
 		paddle2.draw(g);
 		ball.draw(g);
 		score.draw(g);
+		time.draw(g);
+		if(time.seconds < 1) {
+			//end game
+		}
 Toolkit.getDefaultToolkit().sync(); // I forgot to add this line of code in the video, it helps with the animation
 
 	}
