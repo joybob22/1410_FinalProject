@@ -6,9 +6,6 @@ package pongGame;
 /**
  * @author Not Carl Hulbert
  * 
- * All source code for this project
- * gotten from: 
- * https://www.youtube.com/watch?v=oLirZqJFKPE
  * 
  *
  */
